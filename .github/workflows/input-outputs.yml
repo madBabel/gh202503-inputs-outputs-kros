@@ -32,7 +32,7 @@ jobs:
             build-status: ${{steps.build.outputs.status}}
         steps:
             - name: Print GITHUB_OUTPUT path
-              run: echo "${{toJson(Github.GITHUB_OUTPUT) }}"
+              run: echo "${{GITHUB_OUTPUT}}"
             - name: Build
               id: build
               run: |
@@ -46,6 +46,6 @@ jobs:
         environment: ${{inputs.target}}
         steps:
             - name: Deploy
-              run: echo "Deploying to '${{inputs.target}}' using tag '${{inputs.tag}}'"
+              run: echo "Deploying to '${{inputs.target}}' using tag '${{inputs.tag}}' ${{needs.build.build-status}}"
     
                 
