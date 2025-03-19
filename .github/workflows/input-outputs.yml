@@ -32,7 +32,7 @@ jobs:
             build-status: ${{steps.build.outputs.status}}
         steps:
             - name: Print GITHUB_OUTPUT path
-              run: echo "${{ toJSON($GITHUB_OUTPUT) }}"
+              run: echo "${{ toJSON(GITHUB_OUTPUT) }}"
             - name: Build
               id: build
               run: |
