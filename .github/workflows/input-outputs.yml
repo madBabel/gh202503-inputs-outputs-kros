@@ -46,6 +46,6 @@ jobs:
         environment: ${{inputs.target}}
         steps:
             - name: Deploy
-              run: echo "Deploying to '${{inputs.target}}' using tag '${{inputs.tag}}' ${{needs.build.build-status}}"
+              run: echo "Deploying to '${{inputs.target}}' using tag '${{inputs.tag}}' ${{needs.build.outputs.build-status}}"
     
                 
